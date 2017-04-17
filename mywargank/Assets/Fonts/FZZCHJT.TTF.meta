@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 265b48517472c7e49960e4d7a819b2a6
+timeCreated: 1488596122
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - FZZhengHei-B-GBK
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4b87df20a807857419ef86fc4707db29, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

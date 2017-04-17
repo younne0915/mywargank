@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: dba2612971863694bba43397bc9214e5
+timeCreated: 1482923881
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: HomeBase01_1
+    100004: HomeBase01_2
+    100006: HomeBase01_2_1
+    100008: HomeBase01_2_2
+    100010: HomeBase01_2_3
+    100012: HomeBase01_3
+    100014: HomeBase01_3_0
+    100016: HomeBase01_fracturepart1
+    100018: HomeBase01_fracturepart10
+    100020: HomeBase01_fracturepart11
+    100022: HomeBase01_fracturepart12
+    100024: HomeBase01_fracturepart13
+    100026: HomeBase01_fracturepart14
+    100028: HomeBase01_fracturepart15
+    100030: HomeBase01_fracturepart16
+    100032: HomeBase01_fracturepart2
+    100034: HomeBase01_fracturepart3
+    100036: HomeBase01_fracturepart4
+    100038: HomeBase01_fracturepart5
+    100040: HomeBase01_fracturepart6
+    100042: HomeBase01_fracturepart7
+    100044: HomeBase01_fracturepart8
+    100046: HomeBase01_fracturepart9
+    400000: //RootNode
+    400002: HomeBase01_1
+    400004: HomeBase01_2
+    400006: HomeBase01_2_1
+    400008: HomeBase01_2_2
+    400010: HomeBase01_2_3
+    400012: HomeBase01_3
+    400014: HomeBase01_3_0
+    400016: HomeBase01_fracturepart1
+    400018: HomeBase01_fracturepart10
+    400020: HomeBase01_fracturepart11
+    400022: HomeBase01_fracturepart12
+    400024: HomeBase01_fracturepart13
+    400026: HomeBase01_fracturepart14
+    400028: HomeBase01_fracturepart15
+    400030: HomeBase01_fracturepart16
+    400032: HomeBase01_fracturepart2
+    400034: HomeBase01_fracturepart3
+    400036: HomeBase01_fracturepart4
+    400038: HomeBase01_fracturepart5
+    400040: HomeBase01_fracturepart6
+    400042: HomeBase01_fracturepart7
+    400044: HomeBase01_fracturepart8
+    400046: HomeBase01_fracturepart9
+    2300000: HomeBase01_1
+    2300002: HomeBase01_2_1
+    2300004: HomeBase01_2_2
+    2300006: HomeBase01_2_3
+    2300008: HomeBase01_fracturepart1
+    2300010: HomeBase01_fracturepart10
+    2300012: HomeBase01_fracturepart11
+    2300014: HomeBase01_fracturepart12
+    2300016: HomeBase01_fracturepart13
+    2300018: HomeBase01_fracturepart14
+    2300020: HomeBase01_fracturepart15
+    2300022: HomeBase01_fracturepart16
+    2300024: HomeBase01_fracturepart2
+    2300026: HomeBase01_fracturepart3
+    2300028: HomeBase01_fracturepart4
+    2300030: HomeBase01_fracturepart5
+    2300032: HomeBase01_fracturepart6
+    2300034: HomeBase01_fracturepart7
+    2300036: HomeBase01_fracturepart8
+    2300038: HomeBase01_fracturepart9
+    3300000: HomeBase01_1
+    3300002: HomeBase01_2_1
+    3300004: HomeBase01_2_2
+    3300006: HomeBase01_2_3
+    3300008: HomeBase01_fracturepart1
+    3300010: HomeBase01_fracturepart10
+    3300012: HomeBase01_fracturepart11
+    3300014: HomeBase01_fracturepart12
+    3300016: HomeBase01_fracturepart13
+    3300018: HomeBase01_fracturepart14
+    3300020: HomeBase01_fracturepart15
+    3300022: HomeBase01_fracturepart16
+    3300024: HomeBase01_fracturepart2
+    3300026: HomeBase01_fracturepart3
+    3300028: HomeBase01_fracturepart4
+    3300030: HomeBase01_fracturepart5
+    3300032: HomeBase01_fracturepart6
+    3300034: HomeBase01_fracturepart7
+    3300036: HomeBase01_fracturepart8
+    3300038: HomeBase01_fracturepart9
+    4300000: HomeBase01_2_3
+    4300002: HomeBase01_2_2
+    4300004: HomeBase01_2_1
+    4300006: HomeBase01_fracturepart16
+    4300008: HomeBase01_fracturepart15
+    4300010: HomeBase01_fracturepart14
+    4300012: HomeBase01_fracturepart13
+    4300014: HomeBase01_fracturepart12
+    4300016: HomeBase01_fracturepart11
+    4300018: HomeBase01_fracturepart10
+    4300020: HomeBase01_fracturepart9
+    4300022: HomeBase01_fracturepart8
+    4300024: HomeBase01_fracturepart7
+    4300026: HomeBase01_fracturepart6
+    4300028: HomeBase01_fracturepart5
+    4300030: HomeBase01_fracturepart4
+    4300032: HomeBase01_fracturepart3
+    4300034: HomeBase01_fracturepart2
+    4300036: HomeBase01_fracturepart1
+    4300038: HomeBase01_1
+    7400000: stand
+    7400002: dead
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: stand
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HomeBase01_1
+        weight: 1
+      - path: HomeBase01_2
+        weight: 1
+      - path: HomeBase01_2/HomeBase01_2_1
+        weight: 1
+      - path: HomeBase01_2/HomeBase01_2_2
+        weight: 1
+      - path: HomeBase01_2/HomeBase01_2_3
+        weight: 1
+      - path: HomeBase01_3
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart1
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart2
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart3
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart4
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart5
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart6
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart7
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart8
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart9
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart10
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart11
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart12
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart13
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart14
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart15
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart16
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: dead
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HomeBase01_1
+        weight: 1
+      - path: HomeBase01_2
+        weight: 1
+      - path: HomeBase01_2/HomeBase01_2_1
+        weight: 1
+      - path: HomeBase01_2/HomeBase01_2_2
+        weight: 1
+      - path: HomeBase01_2/HomeBase01_2_3
+        weight: 1
+      - path: HomeBase01_3
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart1
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart2
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart3
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart4
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart5
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart6
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart7
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart8
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart9
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart10
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart11
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart12
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart13
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart14
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart15
+        weight: 1
+      - path: HomeBase01_3/HomeBase01_3_0/HomeBase01_fracturepart16
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
