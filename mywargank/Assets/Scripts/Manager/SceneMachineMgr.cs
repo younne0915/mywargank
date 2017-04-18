@@ -22,7 +22,7 @@ namespace WG
         {
             _callback = loadedCallback;
             _async = SceneManager.LoadSceneAsync(sceneName);
-            CoroutineHelper.instance.StartCorotineBehavior(WaitForSceneLoaded());
+            CoroutineHelper.getInstance().StartCorotineBehavior(WaitForSceneLoaded());
         }
 
         private static IEnumerator WaitForSceneLoaded()

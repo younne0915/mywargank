@@ -8,7 +8,7 @@ namespace WG
     {
         public static void Entrance()
         {
-            StateMachineController.instance.SetNextState(GameStateType.Login);
+            StateMachineController.getInstance().SetNextState(GameStateType.Login);
         }
     }
 }

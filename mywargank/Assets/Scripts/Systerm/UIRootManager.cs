@@ -6,10 +6,15 @@ namespace WG
 {
     public class UIRootManager : MonoBehaviour
     {
-        public static UIRootManager instance = null;
+        protected static UIRootManager _instance = null;
         void Awake()
         {
-            instance = this;
+            _instance = this;
+        }
+
+        public static UIRootManager getInstance()
+        {
+            return _instance;
         }
 
         public void AddUI(GameObject ui)

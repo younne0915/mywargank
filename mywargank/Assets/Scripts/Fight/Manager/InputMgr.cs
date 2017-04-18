@@ -7,13 +7,18 @@ namespace WG
     public class InputMgr : MonoBehaviour
     {
 
-        public static InputMgr instance = null;
+        protected static InputMgr _instance = null;
 
         private Vector3 _lastClickPos = Vector3.zero;
 
         void Awake()
         {
-            instance = this;
+            _instance = this;
+        }
+
+        public static InputMgr getInstance()
+        {
+            return _instance;
         }
 
         void Update()
@@ -34,7 +39,7 @@ namespace WG
                     SubStrateComponent subStrateComponent = go.GetComponent<SubStrateComponent>();
                     if(subStrateComponent != null)
                     {
-                        SubStrateMgr.instance.OnSubstrateSelected(subStrateComponent);
+                        SubStrateMgr.getInstance().OnSubstrateSelected(subStrateComponent);
                     }
                 }
 

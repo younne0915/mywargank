@@ -17,7 +17,7 @@ namespace WG{
 
 		public void ExcuteMsg()
 		{
-            StateMachineController.instance.SetNextState(GameStateType.OnMatched);
+            StateMachineController.getInstance().SetNextState(GameStateType.OnMatched);
 		}
 	}
 }

@@ -5,18 +5,16 @@ using Util;
 
 namespace WG
 {
-    public class IPMgr
+    public class IPMgr : Singleton<IPMgr>
     {
-        public static IPMgr instance = null;
 
         public int pomeloPort = 3014;
         //public string pomeloIP = "60.205.125.242";
         public string pomeloIP = "121.42.36.142";
 
         private SDIPConfig _ipConfig;
-        public IPMgr()
+        public void Init()
         {
-            instance = this;
             //PomeloStatusMgr.SetGateServerParam(pomeloIP, pomeloPort);
             _ipConfig = SDIPConfig.GetElement("Global");
             if(_ipConfig == null)

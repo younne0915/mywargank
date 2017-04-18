@@ -12,7 +12,7 @@ namespace WG
         public static void SetPortalNode(TeamNum teamNum, AStarNode node)
         {
             //TODO
-            PortalNodeHelper.instance.InitPortral(teamNum, node);
+            PortalNodeHelper.getInstance().InitPortral(teamNum, node);
         }
 
         public static FixedVector3 GetAstarNodePos(AStarNode node)

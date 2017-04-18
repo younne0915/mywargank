@@ -6,14 +6,19 @@ namespace WG
 {
     public class PomeloMsgRecv : MonoBehaviour
     {
-        public static PomeloMsgRecv instance = null;
+        protected static PomeloMsgRecv _instance = null;
 
         private List<IMsgHandler> _msgList = new List<IMsgHandler>();
         private static object obj = new object();
 
         void Awake()
         {
-            instance = this;
+            _instance = this;
+        }
+
+        public static PomeloMsgRecv getInstance()
+        {
+            return _instance;
         }
 
         public void RecevMsg(IMsgHandler msg)

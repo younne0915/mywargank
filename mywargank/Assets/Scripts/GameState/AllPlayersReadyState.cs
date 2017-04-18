@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Util;
+using LitJson;
 using FightHandler = Protocol.ServerResponseInterFace.Fight.FightHandler;
 
 namespace WG
@@ -33,10 +35,24 @@ namespace WG
         private void LoadSceneFinished()
         {
             Debug.Log("LoadSceneFinished");
-            new FightManager(_data.battleID.ToString());
-            RandomHelper.instance.InitWithSeed(_data.randomSeed);
+            FightManager.getInstance().Init(_data.battleID.ToString());
+            //new FightManager(_data.battleID.ToString());
+            RandomHelper.getInstance().InitWithSeed(_data.randomSeed);
             LockStep.LockStepHelper.SetKeyFrameInterVal(_data.keyFrameRange);
             OnKeyFrameMsgHandler.SetClientStartDelayFrame(_data.clientStartDelay);
+
+            for (int i = 0; i < _data.playerInfoList.Count; i++)
+            {
+                Player player = PlayerMgr.getInstance().InitPlayer(new User(_data.playerInfoList[i].nickname, _data.playerInfoList[i].numberID), _data.playerInfoList[i].seat, _data.playerInfoList[i].portrait, _data.playerInfoList[i].numberID == Accout.numberID, ConvertHelper.ConvertToEnum<TeamNum>(_data.playerInfoList[i].seat));
+                player.SetIntergral(_data.playerInfoList[i].integral);
+                List<string> cards = JsonMapper.ToObject<List<string>>(_data.playerInfoList[i].cardIds);
+                List<string> defaultCards = null;
+                if(_data.playerInfoList[i].battleCardGroup != null)
+                {
+                    defaultCards = JsonMapper.ToObject<List<string>>(_data.playerInfoList[i].battleCardGroup);
+                }
+                CardDataMgr.getInstance().RecvCardFromServer(_data.playerInfoList[i].numberID, cards, defaultCards);
+            }
 
             //TODO
             GameObject go = new GameObject("Mgr");

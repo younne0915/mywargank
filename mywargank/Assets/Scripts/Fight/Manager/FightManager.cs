@@ -8,6 +8,16 @@ using Util;
 
 namespace WG
 {
+    public enum BattleResult
+    {
+        Lose = 0,
+        Win,
+        Draw,
+        PerfectWin,
+        PerfectLose,
+        Default,
+    }
+
     public enum GAME_MODE_CLIENT
     {
         ONE_VERSUS_ONE = 1,
@@ -24,38 +34,34 @@ namespace WG
         friendMatch,
     }
 
-    public class FightManager
-    {
-        public static FightManager instance = null;
 
-        private SDBattle _battle;
+
+    public class FightManager : Singleton<FightManager>
+    {
+
+        private SDBattle _sdBattle;
+        public SDBattle sdBattle
+        {
+            get { return _sdBattle; }
+        }
+
         private BattleType _battleType;
 
-        public FightManager(string battleID)
+        public void Init(string battleID)
         {
-            if(instance != null)
-            {
-                instance.Clear();
-            }
-            new SubStrateMgr();
-            new PlayerMgr();
-            new CardDataMgr();
-            new RandomHelper();
-            new TeamHelper();
-            new PortalNodeHelper();
             SetBattleData(battleID);
             LoadPath();
         }
 
         private void SetBattleData(string battleID)
         {
-            _battle = SDBattle.GetElement(battleID);
-            _battleType = ConvertHelper.ConvertToEnum<BattleType>(_battle.BattleType);
+            _sdBattle = SDBattle.GetElement(battleID);
+            _battleType = ConvertHelper.ConvertToEnum<BattleType>(_sdBattle.BattleType);
         }
 
         private void LoadPath()
         {
-            string path = AstarUtil.PATHDATA_PATH + _battle.ScenePath;
+            string path = AstarUtil.PATHDATA_PATH + _sdBattle.ScenePath;
             TextAsset file = WGLoader.LoadRes<TextAsset>(path, ".txt");
             string[] lines = file.text.Split('\n');
             AstarUtil.LoadMap(lines);
@@ -65,6 +71,11 @@ namespace WG
         private void Clear()
         {
             //TODO
+
+        }
+
+        public void GameOver(BattleResult result)
+        {
 
         }
     }

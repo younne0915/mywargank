@@ -32,7 +32,7 @@ namespace WG
             VersionServerRequestHandler request = new VersionServerRequestHandler(appVersion);
             PomeloStatusMgr.SendMsg(PomeloClientType.PeaceServer, VersionServerRequestHandler.InterfaceName, request, (response) =>
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<VersionServerResponseHandler>(response, callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<VersionServerResponseHandler>(response, callback));
             });
         }
 
@@ -41,7 +41,7 @@ namespace WG
             GateRequestHandler.GetSceneConnector request = new GateRequestHandler.GetSceneConnector(region);
             PomeloStatusMgr.SendMsg(PomeloClientType.PeaceServer, GateRequestHandler.GetSceneConnector.InterfaceName, request, (response)=> 
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<GateResponseHandler.GetSceneConnector>(response, callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<GateResponseHandler.GetSceneConnector>(response, callback));
             });
         }
 
@@ -50,7 +50,7 @@ namespace WG
             GateRequestHandler.GetGameConnector request = new GateRequestHandler.GetGameConnector(numberID);
             PomeloStatusMgr.SendMsg(PomeloClientType.FightServer, GateRequestHandler.GetGameConnector.InterfaceName, request, (response) =>
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<GateResponseHandler.GetGameConnector>(response, callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<GateResponseHandler.GetGameConnector>(response, callback));
             });
         }
 
@@ -59,7 +59,7 @@ namespace WG
             UserRequestHandler.Login request = new UserRequestHandler.Login(username, password, platform);
             PomeloStatusMgr.SendMsg(PomeloClientType.PeaceServer, UserRequestHandler.Login.InterfaceName, request, (response) =>
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<UserReqsponseHandler.Login>(response, callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<UserReqsponseHandler.Login>(response, callback));
             });
         }
 
@@ -68,7 +68,7 @@ namespace WG
             EntryRequestHandler.EnterMatchQueue request = new EntryRequestHandler.EnterMatchQueue(numberID, gameMode);
             PomeloStatusMgr.SendMsg(PomeloClientType.FightServer, EntryRequestHandler.EnterMatchQueue.InterfaceName, request, (response) =>
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<EntryResponseHandler.EnterMatchQueue>(response, callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<EntryResponseHandler.EnterMatchQueue>(response, callback));
             });
         }
 
@@ -77,7 +77,7 @@ namespace WG
             MatchRequestHandler.CancelMatch request = new MatchRequestHandler.CancelMatch();
             PomeloStatusMgr.SendMsg(PomeloClientType.FightServer, MatchRequestHandler.CancelMatch.InterfaceName, request, (response)=> 
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<MatchResponseHandler.CancelMatch>(response, callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<MatchResponseHandler.CancelMatch>(response, callback));
             });
         }
 
@@ -86,7 +86,7 @@ namespace WG
             FightRequestHandler.Ready request = new FightRequestHandler.Ready();
             PomeloStatusMgr.SendMsg(PomeloClientType.FightServer, FightRequestHandler.Ready.InterfaceName, request, (response) =>
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<FightResponseHandler.Ready>(response, callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<FightResponseHandler.Ready>(response, callback));
             });
         }
 
@@ -95,7 +95,7 @@ namespace WG
             FightRequestHandler.StartFight request = new FightRequestHandler.StartFight();
             PomeloStatusMgr.SendMsg(PomeloClientType.FightServer, FightRequestHandler.StartFight.InterfaceName, request, (response)=> 
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnCommonMsgHandler<FightResponseHandler.StartFight>(response,callback));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<FightResponseHandler.StartFight>(response,callback));
             });
         }
     }

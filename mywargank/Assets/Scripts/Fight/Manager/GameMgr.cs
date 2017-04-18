@@ -6,17 +6,22 @@ namespace WG
 {
     public class GameMgr : MonoBehaviour
     {
-        public static GameMgr instance = null;
+        protected static GameMgr _instance = null;
 
         void Awake()
         {
-            instance = null;
+            _instance = this;
             CreateBattleUI();
+        }
+
+        public static GameMgr getInstance()
+        {
+            return _instance;
         }
 
         public void CreateBattleUI()
         {
-            if(BattleUIMgr.instance == null)
+            if(BattleUIMgr.getInstance() == null)
             {
                 UIManager.CreateUI(Constant.UI_BATTLE_PATH + "BattleUI");
             }

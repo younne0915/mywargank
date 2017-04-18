@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LockStep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,43 @@ namespace WG
             //}
         }
 
+        private int _rushCD = 0;
+        public int rushCD
+        {
+            get { return _rushCD; }
+        }
 
+        private int _refreshCD;
+        public int refreshCD
+        {
+            get { return _refreshCD; }
+        }
+
+        private int _lastRushFrame = 0;
+        public int lastRushFrame
+        {
+            get { return _lastRushFrame; }
+        }
+
+        private int _lastRefreshFrame = 0;
+        public int lastRefreshFrame
+        {
+            get { return _lastRefreshFrame; }
+        }
+
+        public Player(User user)
+        {
+            _numberID = user.numberID;
+            _nickName = user.nickName;
+            _rushCD = LockStepHelper.getInstance().ConvertTimeToFrame(FightManager.getInstance().sdBattle.SpeedUpCD);
+            _refreshCD = LockStepHelper.getInstance().ConvertTimeToFrame(FightManager.getInstance().sdBattle.ChangeCD);
+            _lastRushFrame = -rushCD;
+            _lastRefreshFrame = -refreshCD;
+        }
+
+        public void Update(int frame)
+        {
+
+        }
     }
 }

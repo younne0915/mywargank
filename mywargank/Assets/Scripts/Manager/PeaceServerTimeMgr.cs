@@ -6,18 +6,10 @@ using UnityEngine;
 
 namespace WG
 {
-    public class PeaceServerTimeMgr
+    public class PeaceServerTimeMgr : Singleton<PeaceServerTimeMgr>
     {
-        public static PeaceServerTimeMgr instance = null;
-
         private float _lastFrameRealTime = -1;
         private bool _startReckon = false;
-
-        public PeaceServerTimeMgr()
-        {
-            instance = this;
-        }
-
         private long _serverTime = 0;
         public long serverTime
         {

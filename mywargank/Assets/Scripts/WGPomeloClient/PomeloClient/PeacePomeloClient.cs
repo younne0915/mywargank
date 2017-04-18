@@ -37,7 +37,7 @@ namespace WG
             }
             else
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnConnectServerHandler(PomeloClientType.PeaceServer, new PomeloResult((int)PomeloCode.Fail, response.errorMsg)));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnConnectServerHandler(PomeloClientType.PeaceServer, new PomeloResult((int)PomeloCode.Fail, response.errorMsg)));
             }
         }
 
@@ -73,7 +73,7 @@ namespace WG
         {
             client.On(PomeloClient.EVENT_DISCONNECT, (response) =>
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnDisconnectHandler(PomeloClientType.PeaceServer, PomeloClient.EVENT_DISCONNECT));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnDisconnectHandler(PomeloClientType.PeaceServer, PomeloClient.EVENT_DISCONNECT));
             });
         }
     }

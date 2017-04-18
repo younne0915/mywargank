@@ -45,7 +45,7 @@ namespace WG
             {
                 LoginData loginData = JsonMapper.ToObject<LoginData>(response.userBasicInfoStr);
                 SetUserGameInfo(loginData);
-                StateMachineController.instance.SetNextState(GameStateType.Main);
+                StateMachineController.getInstance().SetNextState(GameStateType.Main);
             }
             else
             {
@@ -56,7 +56,7 @@ namespace WG
         public static void SetUserGameInfo(LoginData data)
         {
             Accout.SetUserGameInfo(data);
-            PeaceServerTimeMgr.instance.serverTime = long.Parse(data.serverTime);
+            PeaceServerTimeMgr.getInstance().serverTime = long.Parse(data.serverTime);
         }
 
         public override void Clear(bool clearInstance)

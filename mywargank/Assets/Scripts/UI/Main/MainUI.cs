@@ -39,7 +39,7 @@ namespace WG
         {
             if (PomeloStatusMgr.IsServerConnected())
             {
-                StateMachineController.instance.SetNextState(GameStateType.Match);
+                StateMachineController.getInstance().SetNextState(GameStateType.Match);
             }
         }
     }

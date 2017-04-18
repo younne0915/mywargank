@@ -9,11 +9,16 @@ namespace WG
 {
     public class CoroutineHelper : MonoBehaviour
     {
-        public static CoroutineHelper instance = null;
+        protected static CoroutineHelper _instance = null;
 
         void Awake()
         {
-            instance = this;
+            _instance = this;
+        }
+
+        public static CoroutineHelper getInstance()
+        {
+            return _instance;
         }
 
         public void StartCorotineBehavior(IEnumerator routine)

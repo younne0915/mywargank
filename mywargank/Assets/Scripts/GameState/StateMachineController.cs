@@ -73,9 +73,8 @@ namespace WG
         protected virtual void OnFightDisconnect(string errorMsg) { }
     }
 
-    public class StateMachineController
+    public class StateMachineController : Singleton<StateMachineController>
     {
-        public static StateMachineController instance = null;
 
         private Dictionary<GameStateType, GameState> _gameStateDic = new Dictionary<GameStateType, GameState>();
 
@@ -89,7 +88,6 @@ namespace WG
 
         public StateMachineController()
         {
-            instance = this;
             RegisterStateMachine();
         }
 

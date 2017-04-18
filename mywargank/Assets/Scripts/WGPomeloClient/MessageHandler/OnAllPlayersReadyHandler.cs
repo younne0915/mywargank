@@ -21,7 +21,7 @@ namespace WG
         public void ExcuteMsg()
         {
             AllPlayersReadyState.SetAllPlayersReadyMsg(_result);
-            StateMachineController.instance.SetNextState(GameStateType.AllPlayersReady);
+            StateMachineController.getInstance().SetNextState(GameStateType.AllPlayersReady);
         }
     }
 }

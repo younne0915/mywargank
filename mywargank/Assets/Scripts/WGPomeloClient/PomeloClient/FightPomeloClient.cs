@@ -39,22 +39,22 @@ namespace WG
             //disconnect 不是在上一个client注册的么，为什么还会监听到，每次都创建新的client,岂不是要执行很多遍disconnect？？？
             client.On(PomeloClient.EVENT_DISCONNECT, (data)=> 
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnDisconnectHandler(PomeloClientType.FightServer, data));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnDisconnectHandler(PomeloClientType.FightServer, data));
             });
 
             client.On (OnMatchedMsgHandler.InterfaceName, (data) =>
 			{
-				PomeloMsgRecv.instance.RecevMsg(new OnMatchedMsgHandler(data));
+				PomeloMsgRecv.getInstance().RecevMsg(new OnMatchedMsgHandler(data));
 			});
 
             client.On (OnAllPlayersReadyHandler.InterfaceName, (data) =>
 			{
-				PomeloMsgRecv.instance.RecevMsg(new OnAllPlayersReadyHandler(data));
+				PomeloMsgRecv.getInstance().RecevMsg(new OnAllPlayersReadyHandler(data));
 			});
 
             client.On(OnKeyFrameMsgHandler.interfaceName, (data)=> 
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnKeyFrameMsgHandler(data));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnKeyFrameMsgHandler(data));
             });
         }
     }

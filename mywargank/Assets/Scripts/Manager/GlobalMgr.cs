@@ -6,32 +6,29 @@ namespace WG
 {
     public class GlobalMgr : MonoBehaviour
     {
-        public static GlobalMgr instance = null;
+        protected static GlobalMgr _instance = null;
         void Awake()
         {
-            instance = this;
+            _instance = this;
         }
-        
+
+        public static GlobalMgr getInstance()
+        {
+            return _instance;
+        }
+
         void Start()
         {
             StaticDataLoader.LoadAllJson();
-            new IPMgr();
-            new StateMachineController();
+            IPMgr.getInstance().Init();
             GameEntrance.Entrance();
-            new StaticDataMgr();
             new PeaceServerTimeMgr();
         }
 
         void Update()
         {
-            if(StateMachineController.instance != null)
-            {
-                StateMachineController.instance.Update();
-            }
-            if(PeaceServerTimeMgr.instance != null)
-            {
-                PeaceServerTimeMgr.instance.Update();
-            }
+            StateMachineController.getInstance().Update();
+            PeaceServerTimeMgr.getInstance().Update();
         }
     }
 }

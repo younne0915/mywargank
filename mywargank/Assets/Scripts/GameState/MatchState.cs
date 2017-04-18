@@ -56,10 +56,10 @@ namespace WG
             {
                 case DisconnectError.CancelMatch:
                     MatchController.getInstance().HideMatchUI();
-                    StateMachineController.instance.SetNextState(GameStateType.Main);
+                    StateMachineController.getInstance().SetNextState(GameStateType.Main);
                     break;
                 default:
-                    StateMachineController.instance.SetNextState(GameStateType.Main);
+                    StateMachineController.getInstance().SetNextState(GameStateType.Main);
                     break;
             }
 			

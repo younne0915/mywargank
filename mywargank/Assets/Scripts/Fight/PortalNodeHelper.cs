@@ -6,16 +6,10 @@ using Util;
 
 namespace WG
 {
-    public class PortalNodeHelper
+    public class PortalNodeHelper : Singleton<PortalNodeHelper>
     {
-        public static PortalNodeHelper instance = null;
 
         private List<PortralNode> _portralNodeList = new List<PortralNode>();
-
-        public PortalNodeHelper()
-        {
-            instance = this;
-        }
 
         public void InitPortral(TeamNum teamNum, AStarNode node)
         {

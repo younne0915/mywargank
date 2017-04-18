@@ -74,11 +74,11 @@ namespace WG
             SimonSocketResult result = client.ConnectServer();
             if (NetworkHelper.CheckSocketIsConnected(result))
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnConnectVersionServerHandler(type));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnConnectVersionServerHandler(type));
             }
             else
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Fail, result.errorMsg)));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Fail, result.errorMsg)));
             }
         }
 
@@ -93,11 +93,11 @@ namespace WG
             SimonSocketResult result = client.ConnectServer();
             if (NetworkHelper.CheckSocketIsConnected(result))
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnConnectGateBackHandler(type));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnConnectGateBackHandler(type));
             }
             else
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Fail, result.errorMsg)));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Fail, result.errorMsg)));
             }
         }
 
@@ -131,11 +131,11 @@ namespace WG
             if (NetworkHelper.CheckSocketIsConnected(result))
             {
                 RegisterPushHandler();
-                PomeloMsgRecv.instance.RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Success, "")));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Success, "")));
             }
             else
             {
-                PomeloMsgRecv.instance.RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Fail, result.errorMsg)));
+                PomeloMsgRecv.getInstance().RecevMsg(new OnConnectServerHandler(type, new PomeloResult((int)PomeloCode.Fail, result.errorMsg)));
             }
         }
 
@@ -157,7 +157,7 @@ namespace WG
         {
             if (client != null)
             {
-                StateMachineController.instance.OnDisconnect(type, reason);
+                StateMachineController.getInstance().OnDisconnect(type, reason);
             }
         }
 

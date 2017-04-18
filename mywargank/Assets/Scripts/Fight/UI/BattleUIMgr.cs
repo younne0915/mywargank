@@ -6,15 +6,20 @@ namespace WG
 {
     public class BattleUIMgr : MonoBehaviour
     {
-        public static BattleUIMgr instance = null;
+        protected static BattleUIMgr _instance = null;
 
         public UIButton lookLeftBtn;
         public UIButton lookRightBtn;
 
         void Awake()
         {
-            instance = this;
+            _instance = this;
             RegisterBTN();
+        }
+
+        public static BattleUIMgr getInstance()
+        {
+            return _instance;
         }
 
         void RegisterBTN()

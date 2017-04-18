@@ -6,19 +6,12 @@ using UnityEngine;
 
 namespace WG
 {
-    public class SubStrateMgr
+    public class SubStrateMgr : Singleton<SubStrateMgr>
     {
-        public static SubStrateMgr instance = null;
-
         public static List<SubStrateGroup> subStateGroupList = new List<SubStrateGroup>();
         public static Dictionary<int, SubStrate> allSubStrate = new Dictionary<int, SubStrate>();
 
         private SubStrateComponent _curSelectedCom = null;
-
-        public SubStrateMgr()
-        {
-            instance = this;
-        }
 
         public static void LoadSubStrateModel()
         {
