@@ -7,16 +7,13 @@ using MatchResponseHandler = Protocol.ServerResponseInterFace.Match.MatchHandler
 
 namespace WG
 {
-    public class MatchController : BaseUIController
+    public class MatchController : Singleton<MatchController>
     {
-        public static MatchController instance = null;
-
         private MatchUI _matchUI;
         private MatchModel _matchModel;
 
         public MatchController()
         {
-            instance = this;
             _matchModel = new MatchModel();
         }
 
@@ -70,10 +67,8 @@ namespace WG
             {
                 _matchUI.DestroyUI();
             }
-            if (clearInstance)
-            {
-                instance = null;
-            }
+
+            base.Clear(clearInstance);
             //TODO 调用GC
         }
     }

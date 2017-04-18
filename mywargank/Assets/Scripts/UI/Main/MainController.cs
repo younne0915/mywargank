@@ -6,9 +6,8 @@ using UnityEngine;
 
 namespace WG
 {
-    public class MainController : BaseUIController
+    public class MainController : Singleton<MainController>
     {
-        public static MainController instance = null;
 
         private MainUI _mainUI;
 
@@ -19,12 +18,7 @@ namespace WG
 
         public MainController()
         {
-            instance = this;
-
-            if(MatchController.instance == null)
-            {
-                new MatchController();
-            }
+            
         }
 
         public void OpenMainUI()
@@ -44,12 +38,9 @@ namespace WG
 
         public override void Clear(bool clearInstance)
         {
-            if(MatchController.instance != null)
-            {
-                MatchController.instance.Clear(clearInstance);
-            }
+            MatchController.getInstance().Clear(clearInstance);
 
-            
+            base.Clear(clearInstance);
         }
     }
 }

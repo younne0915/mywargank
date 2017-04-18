@@ -174,6 +174,7 @@ namespace WG
             if (_connectServerCallback != null)
             {
                 _connectServerCallback(result);
+                _connectServerCallback = null;
             }
         }
 

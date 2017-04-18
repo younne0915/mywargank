@@ -25,7 +25,7 @@ namespace WG
         public override void OnEnter()
         {
             base.OnEnter();
-            MainController.instance.Clear(false);
+            MainController.getInstance().Clear(false);
             //SceneMachineMgr.LoadSceneAsync(SDBattle.GetElement(_data.battleID.ToString()).Scene, LoadSceneFinished);
             SceneMachineMgr.LoadSceneAsync("pathfindNew_00", LoadSceneFinished);
         }
@@ -37,10 +37,6 @@ namespace WG
             RandomHelper.instance.InitWithSeed(_data.randomSeed);
             LockStep.LockStepHelper.SetKeyFrameInterVal(_data.keyFrameRange);
             OnKeyFrameMsgHandler.SetClientStartDelayFrame(_data.clientStartDelay);
-            for (int i = 0; i < _data.playerInfoList.Count; i++)
-            {
-                //Player player = PlayerMgr.instance.
-            }
 
             //TODO
             GameObject go = new GameObject("Mgr");

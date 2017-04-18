@@ -37,11 +37,8 @@ namespace WG
         {
             if (NetworkHelper.CheckPomeloCodeIsSuccess(response.code))
             {
-                if(MatchController.instance != null)
-                {
-                    MatchController.instance.SetEmtime(response.emtime);
-                    MatchController.instance.OpenMatchUI(MainController.instance.mainUI);
-                }
+                MatchController.getInstance().SetEmtime(response.emtime);
+                MatchController.getInstance().OpenMatchUI(MainController.getInstance().mainUI);
             }
             else
             {
@@ -58,6 +55,7 @@ namespace WG
             switch (error)
             {
                 case DisconnectError.CancelMatch:
+                    MatchController.getInstance().HideMatchUI();
                     StateMachineController.instance.SetNextState(GameStateType.Main);
                     break;
                 default:

@@ -9,16 +9,14 @@ using UserReqsponseHandler = Protocol.ServerResponseInterFace.SceneConnector.Use
 
 namespace WG
 {
-    public class LoginController : BaseUIController
+    public class LoginController : Singleton<LoginController>
     {
-        public static LoginController instance = null;
 
         private LoginModel _loginModel;
         private LoginUI _loginUI;
 
         public LoginController()
         {
-            instance = this;
             _loginModel = new LoginModel(this);
         }
 
@@ -68,12 +66,9 @@ namespace WG
             {
                 _loginUI.ClearUI();
             }
-            if (clearInstance)
-            {
-                instance = null;
 
-                //TODO 调用GC
-            }
+            base.Clear(clearInstance);
+            //TODO 调用GC
         }
     }
 }
