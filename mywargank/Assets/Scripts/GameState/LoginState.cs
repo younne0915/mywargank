@@ -16,10 +16,6 @@ namespace WG
         public override void OnEnter()
         {
             base.OnEnter();
-            if(LoginController.instance == null)
-            {
-                new LoginController();
-            }
             PomeloStatusMgr.ClearConnectorIP();
             PomeloStatusMgr.ConnectServer(PomeloClientType.PeaceServer, ConnectServerCallback);
         }
@@ -28,7 +24,7 @@ namespace WG
         {
             if (NetworkHelper.CheckPomeloResultIsSuccess(result))
             {
-                LoginController.instance.OpenLoginUI();
+                LoginController.getInstance().OpenLoginUI();
             }
             else
             {
