@@ -44,7 +44,6 @@ namespace Util
         public FixedNum(int arg)
         {
 			val = arg * ONE;
-            Debug.Log("aaa");
         }
 
 		public FixedNum(float arg)

@@ -122,7 +122,7 @@ namespace WG
 
         void IninSkillCardInPanel(int numberID)
         {
-
+            
         }
 
         void InitMercenaryCardsInPanel(int numberID)

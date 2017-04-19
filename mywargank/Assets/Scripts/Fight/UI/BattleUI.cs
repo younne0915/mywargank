@@ -4,22 +4,16 @@ using UnityEngine;
 
 namespace WG
 {
-    public class BattleUIMgr : MonoBehaviour
+    public class BattleUI : BaseUIWindow
     {
-        protected static BattleUIMgr _instance = null;
+        public static readonly string BATTLEUI_PREFAB_NAME = "BattleUI";
 
         public UIButton lookLeftBtn;
         public UIButton lookRightBtn;
 
         void Awake()
         {
-            _instance = this;
             RegisterBTN();
-        }
-
-        public static BattleUIMgr getInstance()
-        {
-            return _instance;
         }
 
         void RegisterBTN()

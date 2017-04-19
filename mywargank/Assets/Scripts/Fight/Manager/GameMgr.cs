@@ -21,10 +21,7 @@ namespace WG
 
         public void CreateBattleUI()
         {
-            if(BattleUIMgr.getInstance() == null)
-            {
-                UIManager.CreateUI(Constant.UI_BATTLE_PATH + "BattleUI");
-            }
+            BattleController.getInstance().CreateBattleUI();
         }
 
         // Use this for initialization

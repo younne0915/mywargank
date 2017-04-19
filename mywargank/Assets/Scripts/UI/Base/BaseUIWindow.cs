@@ -30,7 +30,7 @@ namespace WG
 
         public virtual void ClearUI()
         {
-
+            DestroyUI();
         }
     }
 }
