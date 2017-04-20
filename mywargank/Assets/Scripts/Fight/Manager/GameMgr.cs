@@ -11,7 +11,7 @@ namespace WG
         void Awake()
         {
             _instance = this;
-            CreateBattleUI();
+            OpenVersusUI();
         }
 
         public static GameMgr getInstance()
@@ -19,9 +19,18 @@ namespace WG
             return _instance;
         }
 
-        public void CreateBattleUI()
+        private void OpenVersusUI()
         {
-            BattleController.getInstance().CreateBattleUI();
+            CoroutineHelper.getInstance().StartCorotineBehavior(OpenVersusUICorotine());
+        }
+
+        private IEnumerator OpenVersusUICorotine()
+        {
+            BattleUIController.getInstance().OpenVersusUI();
+            yield return new WaitForSeconds(int.Parse(SDConstant.GetElement("VS_ANIM_TIME").Value) * 0.001f);
+            BattleUIController.getInstance().DestroyVersusUI();
+            BattleUIController.getInstance().OpenBattleUI();
+
         }
 
         // Use this for initialization

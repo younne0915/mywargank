@@ -39,7 +39,10 @@ namespace WG
         public override void Clear(bool clearInstance)
         {
             MatchController.getInstance().Clear(clearInstance);
-            _mainUI.ClearUI();
+            if(_mainUI != null)
+            {
+                _mainUI.ClearUI();
+            }
             base.Clear(clearInstance);
         }
     }

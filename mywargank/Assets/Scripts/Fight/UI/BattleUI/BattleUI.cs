@@ -8,6 +8,16 @@ namespace WG
     {
         public static readonly string BATTLEUI_PREFAB_NAME = "BattleUI";
 
+        public BattleBuildUI battleBuildUI;
+        public BattleUpgradeUI bottomUpgradeUI;
+        public BattleCardInfo battleCardInfoUI;
+        public BattleProgress battleProgress;
+        public BattleCharacterUI bottomCharacterUI;
+        public BattleSkillInfo battleSkillInfo;
+        public BattleSkillInfoUI bottomSkillInfoUI;
+        public SkillCardInfo skillCardInfo;
+        public BattleHomeBaseUI bottomHomeBaseUI;
+
         public UIButton lookLeftBtn;
         public UIButton lookRightBtn;
 

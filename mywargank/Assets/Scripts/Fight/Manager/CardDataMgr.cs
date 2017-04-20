@@ -29,7 +29,7 @@ namespace WG
 
         private Dictionary<int, List<SDCard>> _allPlayerDefaultHeroCards = new Dictionary<int, List<SDCard>>();
 
-        public void RecvCardFromServer(int numberID, List<string> cards, List<string> battleCardsDefault)
+        public void CacheCardsForEachPlayer(int numberID, List<string> cards, List<string> battleCardsDefault)
         {
             InitCardLists(numberID);
             for (int i = 0; i < cards.Count; i++)

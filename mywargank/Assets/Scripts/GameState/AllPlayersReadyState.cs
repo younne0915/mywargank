@@ -51,7 +51,7 @@ namespace WG
                 {
                     defaultCards = JsonMapper.ToObject<List<string>>(_data.playerInfoList[i].battleCardGroup);
                 }
-                CardDataMgr.getInstance().RecvCardFromServer(_data.playerInfoList[i].numberID, cards, defaultCards);
+                CardDataMgr.getInstance().CacheCardsForEachPlayer(_data.playerInfoList[i].numberID, cards, defaultCards);
             }
 
             //TODO

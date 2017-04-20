@@ -34,10 +34,5 @@ namespace WG
                 _controler.SendLogin();
             }
         }
-
-        public override void ClearUI()
-        {
-            DestroyUI();
-        }
     }
 }
