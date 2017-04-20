@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using LockStep;
 
 namespace WG
 {
@@ -10,6 +11,7 @@ namespace WG
     {
         public static readonly string interfaceName = ServerPushInterface.OnKeyFrame.InterfaceName;
         private ServerPushInterface.OnKeyFrame _result;
+        private int nextKeyFrame = 0;
 
         private static int _clientStartDelayFrame = 20;
         public static int clientStartDelayFrame
@@ -24,7 +26,14 @@ namespace WG
 
         public void ExcuteMsg()
         {
+            nextKeyFrame = _result.nextKeyFrame;
+            
+            if (!LockStepMgr.getInstance().startLockStep)
+            {
+                LockStepMgr.getInstance().BeganLockStep();
+            }
 
+            LockStepMgr.getInstance().SetNextKeyFrame(nextKeyFrame);
         }
 
         public static void SetClientStartDelayFrame(int frame)

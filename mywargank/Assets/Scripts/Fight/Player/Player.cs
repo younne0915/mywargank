@@ -92,8 +92,8 @@ namespace WG
         {
             _numberID = user.numberID;
             _nickName = user.nickName;
-            _rushCD = LockStepHelper.getInstance().ConvertTimeToFrame(FightManager.getInstance().sdBattle.SpeedUpCD);
-            _refreshCD = LockStepHelper.getInstance().ConvertTimeToFrame(FightManager.getInstance().sdBattle.ChangeCD);
+            _rushCD = LockStepMgr.getInstance().ConvertTimeToFrame(FightManager.getInstance().sdBattle.SpeedUpCD);
+            _refreshCD = LockStepMgr.getInstance().ConvertTimeToFrame(FightManager.getInstance().sdBattle.ChangeCD);
             _lastRushFrame = -rushCD;
             _lastRefreshFrame = -refreshCD;
         }

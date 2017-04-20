@@ -38,7 +38,7 @@ namespace WG
             FightManager.getInstance().Init(_data.battleID.ToString());
             //new FightManager(_data.battleID.ToString());
             RandomHelper.getInstance().InitWithSeed(_data.randomSeed);
-            LockStep.LockStepHelper.SetKeyFrameInterVal(_data.keyFrameRange);
+            LockStep.LockStepMgr.getInstance().SetKeyFrameInterVal(_data.keyFrameRange);
             OnKeyFrameMsgHandler.SetClientStartDelayFrame(_data.clientStartDelay);
 
             for (int i = 0; i < _data.playerInfoList.Count; i++)

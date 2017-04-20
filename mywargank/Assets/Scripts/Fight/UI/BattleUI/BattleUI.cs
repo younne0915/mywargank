@@ -21,6 +21,8 @@ namespace WG
         public UIButton lookLeftBtn;
         public UIButton lookRightBtn;
 
+        public UIButton testbTN;
+
         void Awake()
         {
             RegisterBTN();
@@ -30,6 +32,7 @@ namespace WG
         {
             EventDelegate.Add(lookLeftBtn.onClick, OnBtnClick);
             EventDelegate.Add(lookLeftBtn.onClick, OnBtnClick);
+            EventDelegate.Add(testbTN.onClick, OnBtnClick);
         }
 
         void OnBtnClick()
@@ -42,7 +45,16 @@ namespace WG
             {
                 OnBackFront();
             }
+            else if(UIButton.current == testbTN)
+            {
+
+            }
             
+        }
+
+        private void SendTestCmd()
+        {
+
         }
 
         public void OnBackFront()
