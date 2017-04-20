@@ -29,7 +29,7 @@ namespace WG
             }
             else
             {
-                TimeMgr.getInstance().SetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyFrame));
+                TimeMgr.getInstance().ResetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyFrame));
             }
 
             LockStepMgr.getInstance().SetNextKeyFrame(nextKeyFrame);

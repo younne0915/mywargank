@@ -9,13 +9,13 @@ using UserReqsponseHandler = Protocol.ServerResponseInterFace.SceneConnector.Use
 
 namespace WG
 {
-    public class LoginController : Singleton<LoginController>
+    public class LoginUIController : Singleton<LoginUIController>
     {
 
         private LoginModel _loginModel;
         private LoginUI _loginUI;
 
-        public LoginController()
+        public LoginUIController()
         {
             _loginModel = new LoginModel(this);
         }

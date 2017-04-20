@@ -13,9 +13,9 @@ namespace WG
         public UIButton cancleBtn;
         public UILabel emTimeLabel;
 
-        private MatchController _controller;
+        private MatchUIController _controller;
 
-        public void Init(MatchController controller)
+        public void Init(MatchUIController controller)
         {
             _controller = controller;
         }

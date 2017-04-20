@@ -7,12 +7,12 @@ using MatchResponseHandler = Protocol.ServerResponseInterFace.Match.MatchHandler
 
 namespace WG
 {
-    public class MatchController : Singleton<MatchController>
+    public class MatchUIController : Singleton<MatchUIController>
     {
         private MatchUI _matchUI;
         private MatchModel _matchModel;
 
-        public MatchController()
+        public MatchUIController()
         {
             _matchModel = new MatchModel();
         }

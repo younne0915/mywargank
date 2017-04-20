@@ -23,9 +23,9 @@ namespace WG
 
     public class LoginModel
     {
-        private LoginController _controller;
+        private LoginUIController _controller;
 
-        public LoginModel(LoginController controller)
+        public LoginModel(LoginUIController controller)
         {
             _controller = controller;
         }

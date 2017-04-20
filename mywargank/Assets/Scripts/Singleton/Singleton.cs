@@ -7,7 +7,7 @@ namespace WG
 {
     public class Singleton<T> where T: class, new()
     {
-        private static T _instance;
+        protected static T _instance;
         private static readonly object sys = new object();
 
         public static T getInstance()
@@ -22,15 +22,9 @@ namespace WG
             return _instance;
         }
 
-        protected BaseUIWindow _lastWindow;
         public virtual void Clear(bool clearInstance)
         {
             if (clearInstance) _instance = null;
-        }
-
-        public virtual void OnClose()
-        {
-
         }
     }
 }

@@ -10,9 +10,9 @@ namespace WG
 
         public UIButton matchBtn;
 
-        private MainController _controller;
+        private MainUIController _controller;
 
-        public void Init(MainController controller)
+        public void Init(MainUIController controller)
         {
             _controller = controller;
         }

@@ -20,6 +20,9 @@ namespace WG
             _lockStepTime.SetLockStepStartTime(beganTime);
         }
 
-
+        public void ResetLockStepStartTime(long beganTime)
+        {
+            _lockStepTime.ResetLockStepStartTime(beganTime);
+        }
     }
 }

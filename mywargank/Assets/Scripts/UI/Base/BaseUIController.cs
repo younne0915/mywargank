@@ -9,12 +9,7 @@ namespace WG
     {
         protected BaseUIWindow _lastWindow;
 
-        public virtual void  OnClose()
-        {
-
-        }
-
-        public virtual void Clear(bool clearInstance)
+        public virtual void OnClose()
         {
 
         }

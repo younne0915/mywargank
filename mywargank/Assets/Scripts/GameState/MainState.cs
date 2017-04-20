@@ -21,8 +21,8 @@ namespace WG
 
         public void LoadMainCallback()
         {
-            MainController.getInstance().OpenMainUI();
-            LoginController.getInstance().Clear(true);
+            MainUIController.getInstance().OpenMainUI();
+            LoginUIController.getInstance().Clear(true);
         }
 
         protected override void OnFightDisconnect(string errorMsg)

@@ -10,7 +10,7 @@ namespace WG
 
         public UIButton loginBtn;
 
-        protected LoginController _controler;
+        protected LoginUIController _controler;
 
         void Awake()
         {
@@ -22,7 +22,7 @@ namespace WG
             EventDelegate.Add(loginBtn.onClick, OnBtnClick);
         }
 
-        public void Init(LoginController controller)
+        public void Init(LoginUIController controller)
         {
             _controler = controller;
         }

@@ -28,7 +28,7 @@ namespace WG
         public override void OnEnter()
         {
             base.OnEnter();
-            MainController.getInstance().Clear(false);
+            MainUIController.getInstance().Clear(false);
             //SceneMachineMgr.LoadSceneAsync(SDBattle.GetElement(_data.battleID.ToString()).Scene, LoadSceneFinished);
             SceneMachineMgr.LoadSceneAsync("pathfindNew_00", LoadSceneFinished);
         }

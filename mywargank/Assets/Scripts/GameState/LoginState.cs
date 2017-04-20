@@ -24,7 +24,7 @@ namespace WG
         {
             if (NetworkHelper.CheckPomeloResultIsSuccess(result))
             {
-                LoginController.getInstance().OpenLoginUI();
+                LoginUIController.getInstance().OpenLoginUI();
             }
             else
             {

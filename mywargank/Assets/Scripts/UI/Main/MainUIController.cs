@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace WG
 {
-    public class MainController : Singleton<MainController>
+    public class MainUIController : BaseUIController
     {
 
         private MainUI _mainUI;
@@ -16,7 +16,7 @@ namespace WG
             get{ return _mainUI;}
         }
 
-        public MainController()
+        public MainUIController()
         {
             
         }
@@ -38,7 +38,7 @@ namespace WG
 
         public override void Clear(bool clearInstance)
         {
-            MatchController.getInstance().Clear(clearInstance);
+            MatchUIController.getInstance().Clear(clearInstance);
             if(_mainUI != null)
             {
                 _mainUI.ClearUI();
