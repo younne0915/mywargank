@@ -6,6 +6,7 @@ using System.Text;
 using UnityEngine;
 using Util;
 using LitJson;
+using LockStep;
 using FightHandler = Protocol.ServerResponseInterFace.Fight.FightHandler;
 
 namespace WG
@@ -38,8 +39,8 @@ namespace WG
             FightManager.getInstance().Init(_data.battleID.ToString());
             //new FightManager(_data.battleID.ToString());
             RandomHelper.getInstance().InitWithSeed(_data.randomSeed);
-            LockStep.LockStepMgr.getInstance().SetKeyFrameInterVal(_data.keyFrameRange);
-            OnKeyFrameMsgHandler.SetClientStartDelayFrame(_data.clientStartDelay);
+            LockStepMgr.getInstance().SetKeyFrameInterVal(_data.keyFrameRange);
+            LockStepMgr.getInstance().SetClientStartDelayFrame(_data.clientStartDelay);
 
             for (int i = 0; i < _data.playerInfoList.Count; i++)
             {

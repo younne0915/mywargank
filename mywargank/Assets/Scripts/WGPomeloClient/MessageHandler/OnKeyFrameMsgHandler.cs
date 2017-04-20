@@ -13,12 +13,6 @@ namespace WG
         private ServerPushInterface.OnKeyFrame _result;
         private int nextKeyFrame = 0;
 
-        private static int _clientStartDelayFrame = 20;
-        public static int clientStartDelayFrame
-        {
-            get { return _clientStartDelayFrame; }
-        }
-
         public OnKeyFrameMsgHandler(object json)
         {
             _result = (ServerPushInterface.OnKeyFrame)json;
@@ -31,15 +25,17 @@ namespace WG
             if (!LockStepMgr.getInstance().startLockStep)
             {
                 LockStepMgr.getInstance().BeganLockStep();
+                TimeMgr.getInstance().SetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyFrame));
+            }
+            else
+            {
+                TimeMgr.getInstance().SetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyFrame));
             }
 
             LockStepMgr.getInstance().SetNextKeyFrame(nextKeyFrame);
         }
 
-        public static void SetClientStartDelayFrame(int frame)
-        {
-            _clientStartDelayFrame = frame;
-        }
+        
 
         
     }

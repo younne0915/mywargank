@@ -15,6 +15,17 @@ namespace LockStep
             get { return _frameEachSecond; }
         }
 
+        private static int _frameInterval = 50;
+        public static int frameInterval
+        {
+            get { return _frameInterval; }
+        }
+
+        public static void Init()
+        {
+            _frameInterval = 1000 / _frameEachSecond;
+        }
+
         public static void Began()
         {
             if (_beginLockStep) return;
