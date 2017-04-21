@@ -10,12 +10,16 @@ namespace LockStep
     public class LockStepTime
     {
         private bool _startLock = false;
+
         private long _timeSinceLockStart = 0;
+        public long timeSinceLockStart
+        {
+            get{ return _timeSinceLockStart; }
+        }
 
         private long _lockStepStartTime = 0;
         public void SetLockStepStartTime(long beganTime)
         {
-            WGLogger.LogError(LogModule.Debug, "SetLockStepStartTime"+ _lockStepStartTime);
             _lockStepStartTime = beganTime;
             _startLock = true;
         }
@@ -24,7 +28,6 @@ namespace LockStep
         {
             if(_lockStepStartTime - beganTime > 50)
             {
-                WGLogger.LogError(LogModule.Debug, "ResetLockStepStartTime");
                 _lockStepStartTime = beganTime;
             }
         }

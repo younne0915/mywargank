@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Util;
 
 namespace WG
 {
@@ -41,6 +42,11 @@ namespace WG
             {
                 StateMachineController.getInstance().SetNextState(GameStateType.Match);
             }
+        }
+
+        void Update()
+        {
+            WGLogger.LogError(LogModule.Debug,"renderFrameInterval = "+Time.deltaTime);
         }
     }
 }

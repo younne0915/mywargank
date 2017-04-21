@@ -26,5 +26,12 @@ namespace WG
         {
             if (clearInstance) _instance = null;
         }
+
+        protected BaseUIWindow _lastWindow;
+
+        public virtual void OnClose()
+        {
+
+        }
     }
 }

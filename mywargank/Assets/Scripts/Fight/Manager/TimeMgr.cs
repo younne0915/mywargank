@@ -10,6 +10,11 @@ namespace WG
     {
         private LockStepTime _lockStepTime;
 
+        public long timeSinceLockStart
+        {
+            get { return _lockStepTime.timeSinceLockStart; }
+        }
+
         public TimeMgr()
         {
             _lockStepTime = new LockStepTime();
@@ -24,5 +29,6 @@ namespace WG
         {
             _lockStepTime.ResetLockStepStartTime(beganTime);
         }
+
     }
 }

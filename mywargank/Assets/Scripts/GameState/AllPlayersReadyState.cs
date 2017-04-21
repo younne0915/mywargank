@@ -40,7 +40,7 @@ namespace WG
             //new FightManager(_data.battleID.ToString());
             RandomHelper.getInstance().InitWithSeed(_data.randomSeed);
             LockStepMgr.getInstance().SetKeyFrameInterVal(_data.keyFrameRange);
-            LockStepMgr.getInstance().SetClientStartDelayFrame(_data.clientStartDelay);
+            LockStepMgr.getInstance().SetClientStartDelayLogicFrame(_data.clientStartDelay);
 
             for (int i = 0; i < _data.playerInfoList.Count; i++)
             {

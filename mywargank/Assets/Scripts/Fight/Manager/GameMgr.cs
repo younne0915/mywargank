@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LockStep;
 
 namespace WG
 {
@@ -42,7 +43,7 @@ namespace WG
         // Update is called once per frame
         void Update()
         {
-
+            LockStepMgr.getInstance().Update();   
         }
     }
 }

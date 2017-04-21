@@ -5,13 +5,7 @@ using System.Text;
 
 namespace WG
 {
-    public class BaseUIController
+    public interface BaseUIController
     {
-        protected BaseUIWindow _lastWindow;
-
-        public virtual void OnClose()
-        {
-
-        }
     }
 }

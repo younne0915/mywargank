@@ -11,7 +11,7 @@ namespace WG
     {
         public static readonly string interfaceName = ServerPushInterface.OnKeyFrame.InterfaceName;
         private ServerPushInterface.OnKeyFrame _result;
-        private int nextKeyFrame = 0;
+        private int nextKeyLogicFrame = 0;
 
         public OnKeyFrameMsgHandler(object json)
         {
@@ -20,19 +20,19 @@ namespace WG
 
         public void ExcuteMsg()
         {
-            nextKeyFrame = _result.nextKeyFrame;
+            nextKeyLogicFrame = _result.nextKeyFrame;
             
             if (!LockStepMgr.getInstance().startLockStep)
             {
                 LockStepMgr.getInstance().BeganLockStep();
-                TimeMgr.getInstance().SetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyFrame));
+                TimeMgr.getInstance().SetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyLogicFrame));
             }
             else
             {
-                TimeMgr.getInstance().ResetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyFrame));
+                TimeMgr.getInstance().ResetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyLogicFrame));
             }
 
-            LockStepMgr.getInstance().SetNextKeyFrame(nextKeyFrame);
+            LockStepMgr.getInstance().SetNextKeyLogicFrame(nextKeyLogicFrame);
         }
 
         

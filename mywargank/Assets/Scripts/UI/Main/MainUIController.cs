@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace WG
 {
-    public class MainUIController : BaseUIController
+    public class MainUIController : Singleton<MainUIController>
     {
 
         private MainUI _mainUI;

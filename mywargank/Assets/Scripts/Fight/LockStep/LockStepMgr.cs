@@ -9,25 +9,21 @@ namespace LockStep
 {
     public class LockStepMgr : Singleton<LockStepMgr>
     {
-        private int _clientStartDelayFrame = 20;
-        public int clientStartDelayFrame
+        private int _clientStartDelayLogicFrame = 20;
+        public int clientStartDelayLogicFrame
         {
-            get { return _clientStartDelayFrame; }
+            get { return _clientStartDelayLogicFrame; }
         }
 
-        public void SetClientStartDelayFrame(int frame)
+        public void SetClientStartDelayLogicFrame(int logicFrame)
         {
-            _clientStartDelayFrame = frame;
+            _clientStartDelayLogicFrame = logicFrame;
         }
 
-        private int _nextKeyFrame = 0;
-        public int nextKeyFrame
+        
+        public void SetNextKeyLogicFrame(int nextLogicKeyFrame)
         {
-            get { return _nextKeyFrame; }
-        }
-        public void SetNextKeyFrame(int nextKeyFrame)
-        {
-            _nextKeyFrame = nextKeyFrame;
+            LockStepEngine.SetNextKeyLogicFrame(nextLogicKeyFrame);
         }
 
         private bool _startLockStep = false;
@@ -65,8 +61,14 @@ namespace LockStep
 
         public long GetLockStepStartTime(int nextKeyFrame)
         {
-            int ms = LockStepEngine.frameInterval * (nextKeyFrame - _clientStartDelayFrame - _keyFrameInterval);
+            int ms = LockStepEngine.frameInterval * (nextKeyFrame - _clientStartDelayLogicFrame - _keyFrameInterval);
+            WGLogger.LogError(LogModule.Debug, "nextKeyFrame = " + nextKeyFrame);
             return ConvertHelper.ConvertDataTimeLong(DateTime.Now) - ms;
+        }
+
+        public void Update()
+        {
+            LockStepEngine.Update(TimeMgr.getInstance().timeSinceLockStart);
         }
     }
 }
