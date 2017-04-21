@@ -26,12 +26,6 @@ namespace LockStep
             LockStepEngine.SetNextKeyLogicFrame(nextLogicKeyFrame);
         }
 
-        private bool _startLockStep = false;
-        public bool startLockStep
-        {
-            get { return _startLockStep; }
-        }
-
         private int _keyFrameInterval = 0;
         public int keyFrameInterval
         {
@@ -54,15 +48,12 @@ namespace LockStep
 
         public void BeganLockStep()
         {
-            LockStepEngine.Init();
-            _startLockStep = true;
             LockStepEngine.Began();
         }
 
         public long GetLockStepStartTime(int nextKeyFrame)
         {
             int ms = LockStepEngine.frameInterval * (nextKeyFrame - _clientStartDelayLogicFrame - _keyFrameInterval);
-            WGLogger.LogError(LogModule.Debug, "nextKeyFrame = " + nextKeyFrame);
             return ConvertHelper.ConvertDataTimeLong(DateTime.Now) - ms;
         }
 

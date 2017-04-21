@@ -1,4 +1,5 @@
-﻿using PathFind;
+﻿using LockStep;
+using PathFind;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,10 +48,17 @@ namespace WG
 
         private BattleType _battleType;
 
+        private bool _startLockStep = false;
+        public bool startLockStep
+        {
+            get { return _startLockStep; }
+        }
+
         public void Init(string battleID)
         {
             SetBattleData(battleID);
             LoadPath();
+            LockStepEngine.Init();
         }
 
         private void SetBattleData(string battleID)
@@ -66,6 +74,12 @@ namespace WG
             string[] lines = file.text.Split('\n');
             AstarUtil.LoadMap(lines);
             SubStrateMgr.LoadSubStrateModel();
+        }
+
+        public void BeganLockStepMgr()
+        {
+            _startLockStep = true;
+            LockStepMgr.getInstance().BeganLockStep();
         }
 
         private void Clear()

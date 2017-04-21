@@ -30,5 +30,9 @@ namespace WG
             _lockStepTime.ResetLockStepStartTime(beganTime);
         }
 
+        public void Update()
+        {
+            _lockStepTime.Update();
+        }
     }
 }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using WG;
 using Util;
+using UnityEngine;
 
 namespace LockStep
 {
     public class LockStepTime
     {
-        private bool _startLock = false;
 
         private long _timeSinceLockStart = 0;
         public long timeSinceLockStart
@@ -21,7 +21,6 @@ namespace LockStep
         public void SetLockStepStartTime(long beganTime)
         {
             _lockStepStartTime = beganTime;
-            _startLock = true;
         }
 
         public void ResetLockStepStartTime(long beganTime)
@@ -32,12 +31,12 @@ namespace LockStep
             }
         }
 
+        private float _time = 0;
+
         public void Update()
         {
-            if (_startLock)
-            {
-                _timeSinceLockStart = ConvertHelper.ConvertDataTimeLong(DateTime.Now) - _lockStepStartTime;
-            }
+            _timeSinceLockStart = ConvertHelper.ConvertDataTimeLong(DateTime.Now) - _lockStepStartTime;
+            WGLogger.LogError(LogModule.Debug, "_timeSinceLockStart = " + _timeSinceLockStart);
         }
     }
 }

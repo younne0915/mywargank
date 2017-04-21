@@ -22,9 +22,9 @@ namespace WG
         {
             nextKeyLogicFrame = _result.nextKeyFrame;
             
-            if (!LockStepMgr.getInstance().startLockStep)
+            if (!FightManager.getInstance().startLockStep)
             {
-                LockStepMgr.getInstance().BeganLockStep();
+                FightManager.getInstance().BeganLockStepMgr();
                 TimeMgr.getInstance().SetLockStepStartTime(LockStepMgr.getInstance().GetLockStepStartTime(nextKeyLogicFrame));
             }
             else

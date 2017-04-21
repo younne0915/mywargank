@@ -46,7 +46,7 @@ namespace WG
 
         void Update()
         {
-            WGLogger.LogError(LogModule.Debug,"renderFrameInterval = "+Time.deltaTime);
+            //WGLogger.LogError(LogModule.Debug,"renderFrameInterval = "+Time.deltaTime);
         }
     }
 }

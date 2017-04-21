@@ -9,6 +9,11 @@ namespace WG
     {
         protected static GameMgr _instance = null;
 
+        public bool startLockStep
+        {
+            get { return FightManager.getInstance().startLockStep; }
+        }
+
         void Awake()
         {
             _instance = this;
@@ -43,7 +48,11 @@ namespace WG
         // Update is called once per frame
         void Update()
         {
-            LockStepMgr.getInstance().Update();   
+            if (startLockStep)
+            {
+                TimeMgr.getInstance().Update();
+                LockStepMgr.getInstance().Update();
+            }
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
+using Util;
 
 namespace LockStep
 {
@@ -55,7 +57,7 @@ namespace LockStep
         public static void Update(long time)
         {
             if (!_beginLockStep) return;
-
+            if (time == 0) return;
             _deltTime = time - _lastRenderFrameTimePoint;
             _lastRenderFrameTimePoint = time;
 
@@ -63,16 +65,16 @@ namespace LockStep
 
             while(_logicFrameChronoscope > _frameInterval)
             {
-                _logicFrameChronoscope -= _frameInterval;
-
-                if (_curLogicFrame < _maxLogicFrame)
+                if (_curLogicFrame < _nextKeyLogicFrame)
                 {
                     _curLogicFrame++;
+                    _logicFrameChronoscope -= _frameInterval;
                     //TODO 逻辑帧处理
                 }
                 else
                 {
-                    //TODO
+                    //TODO 网络卡，导致服务器每关键帧推送过来的消息延迟
+
                 }
                 
             }
