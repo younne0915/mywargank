@@ -35,6 +35,22 @@ namespace WG
         friendMatch,
     }
 
+    public struct Command
+    {
+        public int executeFrame;
+        public int type;
+        public List<int> paramsList;
+        public int numberID;
+
+        public Command(int executeFrame, int type, List<int> param, int numberID)
+        {
+            this.executeFrame = executeFrame;
+            this.type = type;
+            this.paramsList = param;
+            this.numberID = numberID;
+        }
+    }
+
 
 
     public class FightManager : Singleton<FightManager>

@@ -12,6 +12,7 @@ namespace WG
         public static readonly string interfaceName = ServerPushInterface.OnKeyFrame.InterfaceName;
         private ServerPushInterface.OnKeyFrame _result;
         private int nextKeyLogicFrame = 0;
+        private Command command;
 
         public OnKeyFrameMsgHandler(object json)
         {
@@ -33,10 +34,17 @@ namespace WG
             }
 
             LockStepMgr.getInstance().SetNextKeyLogicFrame(nextKeyLogicFrame);
+
+            if(_result.commands != null)
+            {
+                for (int i = 0; i < _result.commands.Count; i++)
+                {
+                    command = new Command(_result.commands[i].executeFrame, _result.commands[i].type, _result.commands[i].paramsList, _result.commands[i].numberID);
+
+                }
+            }
+            
         }
-
-        
-
         
     }
 }

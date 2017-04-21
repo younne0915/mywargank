@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LockStep;
 
 namespace WG
 {
@@ -54,7 +55,7 @@ namespace WG
 
         private void SendTestCmd()
         {
-            
+            PomeloMsgSender.SendBattleCommand(LockStepMgr.getInstance().curLogicFrame + 5, (int)PlayerCommandType.CreateBuilding, new List<int>() { 1, 1 });
         }
 
         public void OnBackFront()

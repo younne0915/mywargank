@@ -98,5 +98,11 @@ namespace WG
                 PomeloMsgRecv.getInstance().RecevMsg(new OnCommonMsgHandler<FightResponseHandler.StartFight>(response,callback));
             });
         }
+
+        public static void SendBattleCommand(int expectExcuteLogicFrame, int type, List<int> parmas)
+        {
+            FightRequestHandler.Fight request = new FightRequestHandler.Fight(expectExcuteLogicFrame, type, parmas);
+            PomeloStatusMgr.SendMsg(PomeloClientType.FightServer, FightRequestHandler.Fight.InterfaceName, request, null);
+        }
     }
 }

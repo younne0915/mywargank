@@ -35,6 +35,10 @@ namespace LockStep
         }
 
         private static int _curLogicFrame = 0;
+        public static int curLogicFrame
+        {
+            get { return _curLogicFrame; }
+        }
         private static int _maxLogicFrame = 0;
 
         private static long _lastRenderFrameTimePoint = -1;

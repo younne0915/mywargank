@@ -41,6 +41,11 @@ namespace LockStep
             get { return LockStepEngine.frameEachSecond; }
         }
 
+        public int curLogicFrame
+        {
+            get { return LockStepEngine.curLogicFrame; }
+        }
+
         public int ConvertTimeToFrame(int ms)
         {
             return frameEachSecond * ms / 1000;

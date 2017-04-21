@@ -101,7 +101,11 @@ namespace WG
 
         public static void SendMsg(PomeloClientType type, string route, SimonMsg msg, Action<object> action)
         {
-            _wgPolemoClientDic[type].Request(route, msg, action);
+            WGPomeloClient wc = _wgPolemoClientDic[type];
+            if(wc != null)
+            {
+                wc.SendMsg(route, msg, action);
+            }
         }
 
         public static bool IsServerConnected()

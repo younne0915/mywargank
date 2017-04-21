@@ -143,9 +143,19 @@ namespace WG
         {
         }
 
-        public void Request(string route, SimonMsg msg, Action<object> action)
+        public void SendMsg(string route, SimonMsg msg, Action<object> action)
         {
-            client.Request(route, msg, action);
+            if(client != null)
+            {
+                if(action == null)
+                {
+                    client.Notify(route, msg);
+                }
+                else
+                {
+                    client.Request(route, msg, action);
+                }
+            }
         }
 
         public void DisConnect(string reason)
