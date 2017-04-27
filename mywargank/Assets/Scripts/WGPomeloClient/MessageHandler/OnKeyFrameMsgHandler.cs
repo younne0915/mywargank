@@ -40,7 +40,7 @@ namespace WG
                 for (int i = 0; i < _result.commands.Count; i++)
                 {
                     command = new Command(_result.commands[i].executeFrame, _result.commands[i].type, _result.commands[i].paramsList, _result.commands[i].numberID);
-
+                    CommandMgr.getInstance().PushCommand(command);
                 }
             }
             

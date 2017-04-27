@@ -36,7 +36,7 @@ namespace LockStep
         public void Update()
         {
             _timeSinceLockStart = ConvertHelper.ConvertDataTimeLong(DateTime.Now) - _lockStepStartTime;
-            WGLogger.LogError(LogModule.Debug, "_timeSinceLockStart = " + _timeSinceLockStart);
+            //WGLogger.LogError(LogModule.Debug, "_timeSinceLockStart = " + _timeSinceLockStart);
         }
     }
 }
